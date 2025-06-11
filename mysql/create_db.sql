@@ -25,13 +25,12 @@ delete from phrases;
 
 select @@datadir;
 
-LOAD DATA INFILE 'RickAndMortyScripts.csv'
+LOAD DATA INFILE '../datafiles/RickAndMortyScripts.csv'
 INTO TABLE phrases
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 LINES;
-
 
 CREATE OR REPLACE VIEW frases_morty AS
 	SELECT line
